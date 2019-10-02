@@ -63,8 +63,9 @@ def playlists_update(playlist_id):
 def playlists_delete(playlist_id):
     """Delete one playlist."""
     playlists.delete_one({'_id': ObjectId(playlist_id)})
-    return redirect(url_for('playlists_index'))
+    return render_template('playlists_new.html', playlist={}, title='New Playlists')
 
-    
+
+
 if __name__ == '__main__':
     app.run(debug=True)
